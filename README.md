@@ -4,7 +4,17 @@
     如果想要定位需要在plist文件中添加 Key Privacy - Location Usage Description(NSLocationUsageDescription)，默认只在前台定位，如果想开启后台定位需要在开启后台模式中设置
         ![coreLocation](coreLocation_backgroundModes.png)
 * ### iOS 8+
+    iOS 8.0开始，苹果进一步加强了对用户隐私的保护。当App想访问用户的隐私信息时，系统不再自动弹出一个对话框让用户授权。我们需要调用iOS 8.0的API,主动请求用户授权
+    * #### requestAlwaysAuthorization           //请求允许在前后台获取用户位置授权
+    * #### requestWhenInUseAuthorization    //请求允许在前台获取用户位置授权
+    注意：务必在 info.plist 文件中配置对应的键值，否则以上请求授权的方法不生效
+    * #### NSLocationAlwaysUsageDescription： 允许在前后台获取位置信息
+    * #### NSLocationWhenInUseDescription: 允许在前台获取位置信息
+    
+    注意：如果是前台定位权限，但是开启了后台模式，在后台也是可以定位的，但是屏幕的上边会有蓝条，提示用户是哪个应用在定位（膜拜单车）
+    
 * ### iOS 9
+    如果想要在后台定位，除了配置NSLocationAlwaysUsageDescription(前后台定位)外，还需要手动设置`allowsBackgroundLocationUpdates = YES`,否则后台不会定位
 ## 定位功能的实现
 * ### 导入框架
         Xcode 中添加 “CoreLocation.framework”
