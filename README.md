@@ -2,7 +2,7 @@
 ## 各系统版本的前台跟后台访问权限
 * ### iOS 8 之前
     如果想要定位需要在plist文件中添加 Key Privacy - Location Usage Description(NSLocationUsageDescription)，默认只在前台定位，如果想开启后台定位需要在开启后台模式中设置
-        ![coreLocation] (coreLocation_backgroundModes.png)
+        ![coreLocation](coreLocation_backgroundModes.png)
 * ### iOS 8+
 * ### iOS 9
 ## 定位功能的实现
