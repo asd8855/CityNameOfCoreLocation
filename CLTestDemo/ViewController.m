@@ -12,6 +12,8 @@
 @interface ViewController ()<CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet UILabel *ui_coordinateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ui_cityName;
 
 @end
 
@@ -24,13 +26,9 @@
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
-
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
     [self findMe];
 }
+
 
 - (void)findMe {
     
@@ -46,8 +44,8 @@
     //1.获取用户位置的对象
     CLLocation *location = [locations lastObject];
     CLLocationCoordinate2D coordinate = location.coordinate;
-    NSLog(@"纬度：%f,经度：%f",coordinate.latitude,coordinate.longitude);
-    
+    //无网络时，可输出经纬度
+    self.ui_coordinateLabel.text = [NSString stringWithFormat:@"纬度：%f,经度：%f",coordinate.latitude,coordinate.longitude];
     //获取当前所在的城市名
     CLGeocoder *geocoder = [[CLGeocoder alloc]init];
     //根据经纬度反向地理编译出地址信息
@@ -60,7 +58,8 @@
             if (!city) {
                 city = placemark.administrativeArea;
             }
-            NSLog(@"cityName:%@",city);
+            //无网络时，执行不到该block
+            self.ui_cityName.text = city;
         }
     }];
     

@@ -20,8 +20,36 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XuE-ku-uEm">
+                                <rect key="frame" x="15" y="323" width="345" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRa-ut-18P">
+                                <rect key="frame" x="15" y="369" width="345" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XuE-ku-uEm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="0NH-ad-bcm"/>
+                            <constraint firstItem="nRa-ut-18P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="1NW-Rl-Qck"/>
+                            <constraint firstItem="XuE-ku-uEm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5i1-k2-OGh"/>
+                            <constraint firstAttribute="trailing" secondItem="nRa-ut-18P" secondAttribute="trailing" constant="15" id="Ojj-7J-HVh"/>
+                            <constraint firstItem="XuE-ku-uEm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bFB-8b-LSC"/>
+                            <constraint firstAttribute="trailing" secondItem="XuE-ku-uEm" secondAttribute="trailing" constant="15" id="gvc-Nt-Ap5"/>
+                            <constraint firstItem="nRa-ut-18P" firstAttribute="top" secondItem="XuE-ku-uEm" secondAttribute="bottom" constant="25" id="lYE-iE-SgG"/>
+                            <constraint firstItem="nRa-ut-18P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zLB-Tx-Opo"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ui_cityName" destination="nRa-ut-18P" id="yTb-9r-QtN"/>
+                        <outlet property="ui_coordinateLabel" destination="XuE-ku-uEm" id="nQg-gY-t1e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

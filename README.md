@@ -66,6 +66,11 @@
         }
         }
     
-## 其他
+## 其他(参考文章)
 * [Markdown在线编译器](http://mahua.jser.me/)
+* [iOS CLLocationManager定位](http://www.jianshu.com/p/c4db2cb0fa93)
+* [iOS 定位功能的实现](http://www.jianshu.com/p/f58be9373b6a)
+
+## 备注
+练习readme的编写
 
